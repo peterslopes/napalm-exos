@@ -331,7 +331,7 @@ class ExosDriver(NetworkDriver):
         # if template_path is None, then it loads to running config. Otherwise it assume an absolute filesystem location.
         # e.g. /usr/local/cfg
 
-        if isinstance(template_source, py23_compat.string_types):
+        if isinstance(template_source, str):
             # Load and render template to string.
             configuration = jinja2.Template(template_source).render(**template_vars)
 
