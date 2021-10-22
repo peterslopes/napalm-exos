@@ -70,7 +70,7 @@ class ExosDriver(NetworkDriver):
             'running': '',
             'candidate': ''
         }
-        command = 'show configuration'
+        command = 'show configuration | i \n'
         configs['running'] = str(self.device.send_command(command))
 
         return configs
