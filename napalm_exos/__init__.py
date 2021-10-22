@@ -14,3 +14,30 @@
 
 """napalm-exos package."""
 from napalm_exos.exos import ExosDriver  # noqa F401
+
+try:
+    __version__ = pkg_resources.get_distribution('napalm-exos').version
+except pkg_resources.DistributionNotFound:
+    __version__ = "Not installed"
+
+__all__ = ('ExosDriver',)
+
+# Define the Netbox plugin metadata if Netbox is installed
+try:
+   from extras.plugins import PluginConfig
+except ImportError:
+    pass
+else:
+    class NapalmExosConfig(PluginConfig):
+        name = 'napalm-exos'
+        verbose_name = 'NAPALM EXOS'
+        description = 'NAPALM Driver for EXOS'
+        version = '0.1.0'
+        author = 'Elisa Jasinska'
+        author_email = 'elisa@bigwaveit.org'
+        base_url = 'napalm-exos'
+        required_settings = []
+        default_settings = {
+        }
+
+config = NapalmExosConfig
