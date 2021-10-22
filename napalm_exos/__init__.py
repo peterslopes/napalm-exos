@@ -38,7 +38,7 @@ else:
         version = '0.1.1'
         author = 'Elisa Jasinska'
         author_email = 'elisa@bigwaveit.org'
-        base_url = 'napalm-exos'
+        base_url = 'napalm_exos'
         required_settings = []
         default_settings = {
         }
