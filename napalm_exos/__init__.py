@@ -32,7 +32,7 @@ else:
         name = 'napalm-exos'
         verbose_name = 'NAPALM EXOS'
         description = 'NAPALM Driver for EXOS'
-        version = '0.1.2'
+        version = '0.1.1'
         author = 'Elisa Jasinska'
         author_email = 'elisa@bigwaveit.org'
         base_url = 'napalm-exos'
