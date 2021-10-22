@@ -32,7 +32,7 @@ except ImportError:
     pass
 else:
     class NapalmExosConfig(PluginConfig):
-        name = 'napalm-exos'
+        name = 'napalm_exos'
         verbose_name = 'NAPALM EXOS'
         description = 'NAPALM Driver for EXOS'
         version = '0.1.1'
