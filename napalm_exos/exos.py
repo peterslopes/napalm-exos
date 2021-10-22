@@ -69,7 +69,7 @@ class ExosDriver(NetworkDriver):
             'startup': '',
             'running': '',
         }
-        configs['running'] = self.device.send_command('show tech-support config')
+        configs['running'] = self.device.send_command('show configuration vlan')
 
         return configs
 
