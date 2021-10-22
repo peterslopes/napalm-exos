@@ -69,8 +69,7 @@ class ExosDriver(NetworkDriver):
             'startup': '',
             'running': '',
         }
-        command = str('show configuration | i \\n')
-        configs['running'] = self.device.send_command('show configuration | e "#"')
+        configs['running'] = self.device.send_command('show configuration | e " \\n"')
 
         return configs
 
