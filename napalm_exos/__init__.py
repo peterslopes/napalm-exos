@@ -12,6 +12,9 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+# Import stdlib
+import pkg_resources
+
 """napalm-exos package."""
 from napalm_exos.exos import ExosDriver  # noqa F401
 
