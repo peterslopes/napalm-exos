@@ -69,7 +69,7 @@ class ExosDriver(NetworkDriver):
             'startup': '',
             'running': '',
         }
-        configs['running'] = self.device.send_command('vi teste.xsf')
+        configs['running'] = self.device.send_command('edit script teste.xsf')
 
         return configs
 
