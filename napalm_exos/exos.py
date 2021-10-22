@@ -69,7 +69,7 @@ class ExosDriver(NetworkDriver):
             'startup': '',
             'running': '',
         }
-
+        self.device.send_command('disable clipaging')
         configs['running'] = str(self.device.send_command('show configuration'))
 
         return configs
