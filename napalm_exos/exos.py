@@ -61,7 +61,7 @@ class ExosDriver(NetworkDriver):
         """
         self.device.disconnect()
 
-    def get_config(self, retrieve='all', full=True, sanitized=False):
+    def get_config(self, retrieve='all', full=True, sanitized=True):
 
         # EXOS doesn't support candidate configuration
         # TODO: support startup configuration (saved)
