@@ -43,4 +43,4 @@ else:
         default_settings = {
         }
 
-config = NapalmExosConfig
+    config = NapalmExosConfig
