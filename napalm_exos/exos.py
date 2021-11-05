@@ -71,7 +71,8 @@ class ExosDriver(NetworkDriver):
         }
         command1 = self.device.send_command('show configuration | i sysName')
         command2 = self.device.send_command('show configuration | e sysName')
-        configs['running'] = command1 + command2
+        configs['running'] = command1 + '\n' + command2
+        
         return configs
     
     def get_optics(self, interface=None):
