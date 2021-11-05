@@ -71,6 +71,8 @@ class ExosDriver(NetworkDriver):
         }
         command1 = self.device.send_command('show configuration | i sysName')
         command2 = self.device.send_command('show configuration | e sysName')
+        command3 = command1 + command2
+        command4 = self._get_and_parse_output(command3)
         configs['running'] = command2
         return configs
 
