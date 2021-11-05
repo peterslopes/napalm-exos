@@ -72,7 +72,7 @@ class ExosDriver(NetworkDriver):
         command1 = self.device.send_command('show configuration | i sysName')
         command2 = self.device.send_command('show configuration | e sysName')
         command3 = command1 + command2
-        command4 = self._get_and_parse_output(command3)
+        command4 = self._get_and_parse_output2(command3)
         configs['running'] = command2
         return configs
 
@@ -270,6 +270,13 @@ class ExosDriver(NetworkDriver):
         structured = textfsm_extractor(self, command.replace(' ', '_'), output)
         return structured
 
+    def _get_and_parse_output2(self, command):
+        output = self.device.send_command(command)
+        # TODO: handle file not found, parse error, blank result?
+        structured = textfsm_extractor(self, command.replace('"', ''), output)
+        return structured
+
+    
     def _key_textfsm_data(self, textfsm_data, key, override_key=""):
         data = {}
 
