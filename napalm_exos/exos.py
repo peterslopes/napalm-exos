@@ -272,7 +272,7 @@ class ExosDriver(NetworkDriver):
     def _get_and_parse_output2(self, command):
         output = self.device.send_command(command)
         # TODO: handle file not found, parse error, blank result?
-        structured = textfsm_extractor(self, command.replace('"', ''), output)
+        structured = textfsm_extractor(self, command.replace('\"', ''), output)
         return structured
 
     
