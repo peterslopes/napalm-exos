@@ -69,12 +69,11 @@ class ExosDriver(NetworkDriver):
             'startup': '',
             'running': '',
         }
-        self.device.send_command('disable clipaging')
         command1 = self.device.send_command('show configuration | i sysName')
         command2 = self.device.send_command('show configuration | e sysName')
         configs['running'] = command1 + command2
         return configs
-
+    
     def get_optics(self, interface=None):
         structured = self._get_and_parse_output(
                         'show ports transceiver information detail'
